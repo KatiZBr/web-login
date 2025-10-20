@@ -1,0 +1,21 @@
+/* Arquivo: agendamento.css */
+/* Define a fonte padrão para a página de agendamento */
+body {
+
+    
+    font-family: 'Inter', sans-serif;
+      background-image: url('./assets/backgroud.jpg'); 
+    
+    /* Faz a imagem cobrir toda a tela, sem distorcer */
+    background-size: cover; 
+    
+    /* Centraliza a imagem na tela */
+    background-position: center; 
+    
+    /* Garante que a imagem não se repita */
+    background-repeat: no-repeat;
+    
+    /* Mantém a imagem fixa enquanto a página rola (opcional, mas dá um efeito legal) */
+    background-attachment: fixed; 
+    
+}

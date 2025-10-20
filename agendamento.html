@@ -1,0 +1,128 @@
+<!-- Arquivo: agendamento.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consultas</title>
+    <link rel="icon" type="image/" href="./assets/favicon.ico">
+    <!-- Tailwind CSS para estilos rápidos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Arquivo de estilo personalizado -->
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 sm:p-8">
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Agendamento de Consulta</h1>
+                <p class="text-gray-500 mb-8">Preencha os dados abaixo para registrar uma nova consulta.</p>
+
+                <form id="agendamentoForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Coluna 1 -->
+                    <div class="md:col-span-1">
+                        <div class="mb-4">
+                            <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome do paciente</label>
+                            <input type="text" id="nome" name="nome" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">E-mail</label>
+                            <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="telefone" class="block text-gray-700 text-sm font-bold mb-2">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="idade" class="block text-gray-700 text-sm font-bold mb-2">Idade</label>
+                            <input type="number" id="idade" name="idade" min="0" max="120" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4 md:mb-0">
+                            <label for="sintomas" class="block text-gray-700 text-sm font-bold mb-2">Sintomas relatados</label>
+                            <textarea id="sintomas" name="sintomas" rows="5" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2 -->
+                    <div class="md:col-span-1">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="data" class="block text-gray-700 text-sm font-bold mb-2">Data da consulta</label>
+                                <input type="date" id="data" name="data" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="hora" class="block text-gray-700 text-sm font-bold mb-2">Horário</label>
+                                <input type="time" id="hora" name="hora" class="shadow-sm appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="especialidade" class="block text-gray-700 text-sm font-bold mb-2">Especialidade</label>
+                            <select id="especialidade" name="especialidade" class="shadow-sm border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Clínica Geral</option>
+                                <option>Pediatria</option>
+                                <option>Dermatologia</option>
+                                <option>Odontologia</option>
+                                <option>Cardiologia</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="medico" class="block text-gray-700 text-sm font-bold mb-2">Médico Responsável</label>
+                            <select id="medico" name="medico" class="shadow-sm border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Dr. Silva</option>
+                                <option>Dra. Ana</option>
+                                <option>Dr. João</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <span class="block text-gray-700 text-sm font-bold mb-2">Conveniado?</span>
+                            <div class="mt-2 flex">
+                                <label class="inline-flex items-center mr-6">
+                                    <input type="radio" class="form-radio text-blue-600" name="conveniado" value="Sim">
+                                    <span class="ml-2">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio text-blue-600" name="conveniado" value="Não" checked>
+                                    <span class="ml-2">Não</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="block text-gray-700 text-sm font-bold mb-2">Serviços adicionais</span>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox rounded text-blue-600" name="servico" value="Retorno">
+                                    <span class="ml-2">Retorno</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox rounded text-blue-600" name="servico" value="Exames">
+                                    <span class="ml-2">Exames</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox rounded text-blue-600" name="servico" value="Teleconsulta">
+                                    <span class="ml-2">Teleconsulta</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox rounded text-blue-600" name="servico" value="Receita Médica">
+                                    <span class="ml-2">Receita Médica</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-2 mt-4">
+                        <button type="submit" id="btnSalvar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
+                            Salvar Agendamento
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arquivo de script -->
+    <script src="agendamento.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+/* Define a fonte padrão para a página de login */
+body {
+    font-family: 'Inter', sans-serif;
+     /* Define a imagem de fundo, buscando na pasta 'assets' */
+    /* Lembre-se de colocar um arquivo 'background.jpg' na sua pasta 'assets' */
+    background-image: url('./assets/backgroud.jpg'); 
+    
+    /* Faz a imagem cobrir toda a tela, sem distorcer */
+    background-size: cover; 
+    
+    /* Centraliza a imagem na tela */
+    background-position: center; 
+    
+    /* Garante que a imagem não se repita */
+    background-repeat: no-repeat;
+    
+    /* Mantém a imagem fixa enquanto a página rola (opcional, mas dá um efeito legal) */
+    background-attachment: fixed; 
+}

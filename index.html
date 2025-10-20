@@ -1,0 +1,67 @@
+<!-- Arquivo: index.html -->
+<!DOCTYPE html> <!-- Aqui eu defino que este é um documento HTML5. É a primeira coisa que o navegador lê. -->
+<html lang="pt-BR"> <!-- Estou dizendo que o idioma principal da minha página é o Português do Brasil. Ajuda na acessibilidade e SEO. -->
+<head>
+    <!-- O <head> é a cabeça do meu documento. As informações aqui não aparecem na página, mas são importantes para o navegador. -->
+    <meta charset="UTF-8"> <!-- Defino o conjunto de caracteres como UTF-8 para que acentos e símbolos especiais funcionem direitinho. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Essa linha é crucial para o site ser responsivo, ou seja, se adaptar a telas de celular, tablet e computador. -->
+    <title>Login - Sistema de Agendamento</title> <!-- Este é o título que vai aparecer na aba do navegador. -->
+    <!-- abaixo o icon fav para as abas-->
+    <link rel="icon" type="image/" href="./assets/favicon.ico"> 
+    <!-- A partir daqui, estou incluindo os estilos da minha página. -->
+    
+    <!-- Estou incluindo o Tailwind CSS diretamente de um CDN. É uma biblioteca que me ajuda a estilizar tudo de forma rápida usando classes prontas. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Aqui, eu pego a fonte 'Inter' do Google Fonts para deixar o texto mais bonito. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- E aqui eu linko meu próprio arquivo de CSS, o 'style.css', para qualquer estilo personalizado que eu queira adicionar. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen"> <!-- No <body> fica todo o conteúdo visível da minha página. As classes do Tailwind aqui definem a cor de fundo e centralizam todo o conteúdo na tela. -->
+
+    <!-- Criei um container principal para organizar o conteúdo. -->
+    <div class="container mx-auto p-4 sm:p-0">
+        <!-- Este é o card branco onde o formulário de login vai ficar. As classes do Tailwind definem o tamanho, centralização, cor, bordas arredondadas e sombra. -->
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-8"> <!-- Adicionei um preenchimento interno (padding) para o conteúdo não ficar colado nas bordas. -->
+                
+                <!-- Títulos da minha tela de login. -->
+                <h1 class="block text-2xl text-center font-bold text-gray-700">Acesso ao Sistema</h1>
+                <p class="text-center text-gray-500 mt-2 mb-8">Bem-vindo, caro usuário.</p>
+                
+                <!-- Aqui começa o meu formulário de login. O 'id' é para eu poder selecioná-lo com JavaScript. -->
+                <form id="loginForm">
+                    <!-- Campo de entrada para o nome de usuário. -->
+                    <div class="mb-4"> <!-- Margem inferior para separar do campo de baixo. -->
+                        <label for="usuario" class="block text-gray-700 text-sm font-bold mb-2">Usuário</label> <!-- A etiqueta do campo. O 'for' liga a label ao input com o id 'usuario'. -->
+                        <input type="text" id="usuario" name="usuario" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"> <!-- O campo onde o usuário vai digitar. -->
+                    </div>
+                    
+                    <!-- Campo de entrada para a senha. -->
+                    <div class="mb-6">
+                        <label for="senha" class="block text-gray-700 text-sm font-bold mb-2">Senha</label> <!-- A etiqueta para o campo de senha. -->
+                        <input type="password" id="senha" name="senha" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"> <!-- O campo de senha. O 'type="password"' faz com que o texto digitado vire bolinhas (●●●●●). -->
+                    </div>
+                    
+                    <!-- Este é um espaço reservado para exibir a mensagem de erro. O JavaScript vai colocar o texto aqui se o login falhar. -->
+                    <div id="errorMessage" class="text-red-500 text-center text-sm mb-4 h-5"></div>
+
+                    <!-- Div para o botão de login. -->
+                    <div class="flex items-center justify-between">
+                        <!-- O botão que envia o formulário. O 'type="submit"' diz ao navegador que este botão confirma o formulário. -->
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- No final do body, eu chamo meu arquivo JavaScript. É uma boa prática colocar aqui para que a página carregue primeiro e o script depois. -->
+    <script src="login.js"></script>
+
+</body>
+</html>
